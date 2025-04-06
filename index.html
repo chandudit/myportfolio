@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Udit Chand | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            light: '#3B82F6',
+                            DEFAULT: '#2563EB',
+                            dark: '#1D4ED8',
+                        },
+                        secondary: {
+                            light: '#10B981',
+                            DEFAULT: '#059669',
+                            dark: '#047857',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .animation-delay-2000 {
+                animation-delay: 2s;
+            }
+            .animation-delay-4000 {
+                animation-delay: 4s;
+            }
+        }
+    </style>
+</head>
+<body class="dark:bg-gray-900 bg-gray-50 text-gray-800 dark:text-gray-200 transition-colors duration-300 ease-in-out">
+    <!-- Particle Animation Background -->
+    <div id="particles-js" class="fixed inset-0 -z-10"></div>
+    
+    <!-- Background Animation (backup for particles) -->
+    <div class="fixed inset-0 -z-20 overflow-hidden">
+        <div class="absolute -inset-[20%] opacity-50">
+            <div class="animate-blob animation-delay-2000 mix-blend-multiply filter blur-xl absolute top-0 -left-4 w-72 h-72 bg-purple-300 dark:bg-purple-700 rounded-full"></div>
+            <div class="animate-blob animation-delay-4000 mix-blend-multiply filter blur-xl absolute -bottom-8 left-20 w-72 h-72 bg-yellow-300 dark:bg-yellow-700 rounded-full"></div>
+            <div class="animate-blob mix-blend-multiply filter blur-xl absolute -right-8 top-0 w-72 h-72 bg-blue-300 dark:bg-blue-700 rounded-full"></div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="text-2xl font-bold text-primary-dark dark:text-primary-light flex items-center">
+                        <span class="text-3xl mr-1">Udit</span>
+                    </a>
+                </div>
+                <div class="flex items-center">
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-4">
+                            <a href="#home" class="px-3 py-2 text-sm font-medium hover:text-primary-dark dark:hover:text-primary-light">Home</a>
+                            <a href="#about" class="px-3 py-2 text-sm font-medium hover:text-primary-dark dark:hover:text-primary-light">About</a>
+                            <a href="#skills" class="px-3 py-2 text-sm font-medium hover:text-primary-dark dark:hover:text-primary-light">Skills</a>
+                            <a href="#contact" class="px-3 py-2 text-sm font-medium hover:text-primary-dark dark:hover:text-primary-light">Contact</a>
+                        </div>
+                    </div>
+                    <button id="darkModeToggle" class="ml-4 rounded-full p-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <div class="space-y-6 max-w-xl">
+                        <div class="typewriter">
+                            <h2 class="text-2xl font-semibold text-primary-dark dark:text-primary-light tracking-wider" id="typing-text">Hello, I'm</h2>
+                        </div>
+                        <h1 class="text-5xl sm:text-6xl font-bold animate-gradient-text">Udit Chand</h1>
+                        <p class="text-xl font-medium text-gray-600 dark:text-gray-400">Web Developer & Computer Science Student</p>
+                        <p class="text-gray-600 dark:text-gray-400">Passionate about creating modern web experiences with clean code and innovative solutions.</p>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#about" class="px-6 py-3 btn-primary rounded-lg font-medium hover:shadow-lg transition duration-300 transform hover:scale-105">
+                                About Me
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                            <a href="#contact" class="px-6 py-3 btn-secondary rounded-lg font-medium hover:shadow-lg transition duration-300 transform hover:scale-105">
+                                Contact Me
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2 flex justify-center">
+                    <div class="relative photo-container w-80 h-80">
+                        <!-- Animated Rings -->
+                        <div class="absolute inset-0 bg-primary-light/20 dark:bg-primary-dark/20 rounded-full animate-pulse"></div>
+                        <div class="absolute inset-4 bg-primary-light/30 dark:bg-primary-dark/30 rounded-full animate-pulse animation-delay-2000"></div>
+                        <div class="absolute inset-8 bg-primary-light/40 dark:bg-primary-dark/40 rounded-full"></div>
+                        <!-- Photo -->
+                        <div class="absolute inset-0 flex items-center justify-center overflow-hidden rounded-full">
+                            <img src="WhatsApp Image 2025-04-06 at 08.39.30_4da03fc8.jpg" alt="Udit Chand" class="w-full h-full object-cover profile-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold">About Me</h2>
+                <div class="mt-2 w-20 h-1 bg-primary-dark dark:bg-primary-light mx-auto"></div>
+            </div>
+            <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 md:p-12">
+                <div class="space-y-6">
+                    <p class="text-lg">
+                        I am a Computer Science student at <span class="font-semibold">Panchmura Mahavidyalaya</span>, passionate about web development and problem-solving. 
+                        My journey in technology started with learning C programming and has expanded to include various languages and technologies.
+                    </p>
+                    <p class="text-lg">
+                        I'm currently focused on expanding my knowledge in Database Management Systems, Computer Networks, 
+                        and Operating Systems while building practical projects to enhance my skills.
+                    </p>
+                    <div class="pt-4">
+                        <h3 class="text-xl font-semibold mb-4">Education</h3>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <i class="fas fa-graduation-cap text-primary-dark dark:text-primary-light"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium">Computer Science</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Panchmura Mahavidyalaya</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-gray-800/50">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold">My Skills</h2>
+                <div class="mt-2 w-20 h-1 bg-primary-dark dark:bg-primary-light mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8">
+                    <h3 class="text-xl font-semibold mb-6 flex items-center">
+                        <i class="fas fa-code text-primary-dark dark:text-primary-light mr-3"></i>
+                        Programming Languages
+                    </h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-medium">C</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 h-2 rounded-full">
+                                <div class="bg-primary-dark dark:bg-primary-light h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-medium">Java</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 h-2 rounded-full">
+                                <div class="bg-primary-dark dark:bg-primary-light h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-medium">Python</span>
+                                <span>70%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 h-2 rounded-full">
+                                <div class="bg-primary-dark dark:bg-primary-light h-2 rounded-full" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-medium">DSA using C</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 h-2 rounded-full">
+                                <div class="bg-primary-dark dark:bg-primary-light h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8">
+                    <h3 class="text-xl font-semibold mb-6 flex items-center">
+                        <i class="fas fa-laptop-code text-primary-dark dark:text-primary-light mr-3"></i>
+                        Web Technologies
+                    </h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-medium">HTML</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 h-2 rounded-full">
+                                <div class="bg-secondary-dark dark:bg-secondary-light h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-medium">CSS</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 h-2 rounded-full">
+                                <div class="bg-secondary-dark dark:bg-secondary-light h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-medium">JavaScript</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 h-2 rounded-full">
+                                <div class="bg-secondary-dark dark:bg-secondary-light h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h4 class="text-lg font-medium mb-4">Currently Learning</h4>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-3 py-1.5 bg-gray-200 dark:bg-gray-700 rounded-full text-sm">DBMS</span>
+                            <span class="px-3 py-1.5 bg-gray-200 dark:bg-gray-700 rounded-full text-sm">Computer Networks</span>
+                            <span class="px-3 py-1.5 bg-gray-200 dark:bg-gray-700 rounded-full text-sm">Operating Systems</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold">Get In Touch</h2>
+                <div class="mt-2 w-20 h-1 bg-primary-dark dark:bg-primary-light mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+                <div class="md:col-span-2 bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8">
+                    <h3 class="text-xl font-semibold mb-6">Contact Information</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <i class="fas fa-envelope text-primary-dark dark:text-primary-light"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium">Email</h4>
+                                <p class="text-gray-600 dark:text-gray-400">uditchand555@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <i class="fas fa-map-marker-alt text-primary-dark dark:text-primary-light"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium">Location</h4>
+                                <p class="text-gray-600 dark:text-gray-400">West Bengal, India</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h4 class="text-lg font-medium mb-4">Connect With Me</h4>
+                        <div class="flex space-x-4">
+                            <a href="https://www.facebook.com/udit.chand.2025?mibextid=ZbWKwL" class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-primary-dark hover:dark:bg-primary-light hover:text-white hover:dark:text-gray-900 transition">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://www.facebook.com/udit.chand.2025?mibextid=ZbWKwL" class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-primary-dark hover:dark:bg-primary-light hover:text-white hover:dark:text-gray-900 transition">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.facebook.com/udit.chand.2025?mibextid=ZbWKwL" class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-primary-dark hover:dark:bg-primary-light hover:text-white hover:dark:text-gray-900 transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-span-3 bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8">
+                    <h3 class="text-xl font-semibold mb-6">Send Me a Message</h3>
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-primary-dark dark:focus:ring-primary-light focus:border-transparent bg-white dark:bg-gray-700">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-primary-dark dark:focus:ring-primary-light focus:border-transparent bg-white dark:bg-gray-700">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-primary-dark dark:focus:ring-primary-light focus:border-transparent bg-white dark:bg-gray-700">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-primary-dark dark:focus:ring-primary-light focus:border-transparent bg-white dark:bg-gray-700"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full px-6 py-3 bg-primary-dark dark:bg-primary-light text-white dark:text-gray-900 rounded-lg font-medium hover:bg-primary hover:dark:bg-primary transition">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-4 border-t border-gray-200 dark:border-gray-700">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-center md:text-left mb-4 md:mb-0">
+                    <a href="#" class="text-2xl font-bold text-primary-dark dark:text-primary-light">UC</a>
+                    <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">© 2025 Udit Chand. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#home" class="text-sm hover:text-primary-dark dark:hover:text-primary-light">Home</a>
+                    <a href="#about" class="text-sm hover:text-primary-dark dark:hover:text-primary-light">About</a>
+                    <a href="#skills" class="text-sm hover:text-primary-dark dark:hover:text-primary-light">Skills</a>
+                    <a href="#contact" class="text-sm hover:text-primary-dark dark:hover:text-primary-light">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Dark mode toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const html = document.documentElement;
+
+        // Check for saved theme preference or use system preference
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        } else {
+            html.classList.remove('dark');
+        }
+
+        // Toggle dark/light mode
+        darkModeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+            
+            // Update particles on theme change
+            updateParticles();
+        });
+
+        // Initialize particles
+        function updateParticles() {
+            const isDark = html.classList.contains('dark');
+            
+            particlesJS('particles-js', {
+                particles: {
+                    number: { value: 80, density: { enable: true, value_area: 800 } },
+                    color: { value: isDark ? '#4F8BFF' : '#3B82F6' },
+                    shape: { type: 'circle' },
+                    opacity: { 
+                        value: isDark ? 0.4 : 0.2, 
+                        random: true 
+                    },
+                    size: { value: 3, random: true },
+                    line_linked: {
+                        enable: true,
+                        distance: 150,
+                        color: isDark ? '#4F8BFF' : '#3B82F6',
+                        opacity: isDark ? 0.3 : 0.2,
+                        width: 1
+                    },
+                    move: {
+                        enable: true,
+                        speed: 1,
+                        direction: 'none',
+                        random: true,
+                        out_mode: 'out'
+                    }
+                },
+                interactivity: {
+                    detect_on: 'canvas',
+                    events: {
+                        onhover: { enable: true, mode: 'grab' },
+                        onclick: { enable: true, mode: 'push' },
+                        resize: true
+                    },
+                    modes: {
+                        grab: { distance: 140, line_linked: { opacity: 0.8 } },
+                        push: { particles_nb: 4 }
+                    }
+                },
+                retina_detect: true
+            });
+        }
+
+        // Typing effect
+        function typeWriter(text, element, speed = 50, delay = 1000) {
+            let i = 0;
+            setTimeout(() => {
+                element.textContent = '';
+                const typing = setInterval(() => {
+                    if (i < text.length) {
+                        element.textContent += text.charAt(i);
+                        i++;
+                    } else {
+                        clearInterval(typing);
+                    }
+                }, speed);
+            }, delay);
+        }
+
+        // Scroll reveal function
+        function revealOnScroll() {
+            const elements = document.querySelectorAll('.reveal');
+            
+            elements.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                } else {
+                    element.classList.remove('active');
+                }
+            });
+        }
+
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize particles.js
+            updateParticles();
+            
+            // Typing effect initialization
+            const typingElement = document.getElementById('typing-text');
+            if (typingElement) {
+                typeWriter("Hello, I'm", typingElement);
+                
+                // Repeat typing effect every 10 seconds
+                setInterval(() => {
+                    typeWriter("Hello, I'm", typingElement);
+                }, 10000);
+            }
+            
+            // Add 'reveal' class to sections for scroll animation
+            document.querySelectorAll('section:not(#home)').forEach(section => {
+                section.classList.add('reveal');
+            });
+            
+            // Trigger reveal animation on scroll
+            window.addEventListener('scroll', revealOnScroll);
+            revealOnScroll(); // Initial check
+            
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 64, // Adjust for navbar height
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Animation for skill bars
+            const animateSkills = () => {
+                const skillBars = document.querySelectorAll('#skills .bg-primary-dark, #skills .bg-secondary-dark');
+                skillBars.forEach(bar => {
+                    const width = bar.style.width;
+                    bar.style.width = '0';
+                    setTimeout(() => {
+                        bar.style.width = width;
+                        bar.style.transition = 'width 1s ease-in-out';
+                    }, 300);
+                });
+            };
+
+            // Intersection Observer for skills section
+            const skillsSection = document.getElementById('skills');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateSkills();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            if (skillsSection) {
+                observer.observe(skillsSection);
+            }
+
+            // Add animation class to the body
+            document.body.classList.add('animate-in');
+        });
+    </script>
+    <style>
+        /* Animation Keyframes */
+        @keyframes blob {
+            0% {
+                transform: translate(0px, 0px) scale(1);
+            }
+            33% {
+                transform: translate(30px, -50px) scale(1.1);
+            }
+            66% {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+            100% {
+                transform: translate(0px, 0px) scale(1);
+            }
+        }
+        
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Animation Classes */
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+        
+        .animate-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        .animate-gradient-text {
+            background: linear-gradient(to right, #3B82F6, #10B981, #3B82F6);
+            background-size: 200% auto;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient 3s linear infinite;
+        }
+        
+        /* Reveal on Scroll Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Profile Image Styling */
+        .photo-container {
+            transition: transform 0.3s ease;
+        }
+        
+        .photo-container:hover {
+            transform: scale(1.05);
+        }
+        
+        .profile-image {
+            transition: all 0.5s ease;
+            filter: brightness(1);
+        }
+        
+        .dark .profile-image {
+            filter: brightness(0.9);
+        }
+        
+        /* Typewriter Effect */
+        .typewriter {
+            display: inline-block;
+            min-height: 2rem;
+        }
+        
+        /* Button Styles */
+        .btn-primary {
+            background-color: var(--tw-color-primary-dark, #1D4ED8);
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+        
+        .dark .btn-primary {
+            background-color: var(--tw-color-primary-light, #3B82F6);
+            color: #111827;
+        }
+        
+        .btn-secondary {
+            border: 2px solid var(--tw-color-primary-dark, #1D4ED8);
+            color: var(--tw-color-primary-dark, #1D4ED8);
+            transition: all 0.3s ease;
+        }
+        
+        .dark .btn-secondary {
+            border-color: var(--tw-color-primary-light, #3B82F6);
+            color: var(--tw-color-primary-light, #3B82F6);
+        }
+        
+        /* Interactive section hover effects */
+        section {
+            transition: transform 0.3s ease;
+        }
+        
+        section:hover .section-header {
+            transform: translateY(-5px);
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        .dark ::-webkit-scrollbar-track {
+            background: #1f2937;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #3B82F6;
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #1D4ED8;
+        }
+    </style>
+</body>
+</html> 
